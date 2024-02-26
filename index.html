@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rest Countires</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <script type="module" src="src/js/controller.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Where in the world?</h2>
+        <div class="header-modes">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 n"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            />
+          </svg>
+          <p>Dark Mode</p>
+        </div>
+      </div>
+
+      <div class="section-hero">
+        <form action="submit">
+          <div class="section-hero__input">
+            <input
+              class="section-hero__input-search"
+              type="text"
+              placeholder="Search for a country..."
+            />
+            <select name="region" id="region">
+              <option value="select">Filter by Region</option>
+              <option value="africa">Africa</option>
+              <option value="africa">America</option>
+              <option value="africa">Asia</option>
+              <option value="africa">Europe</option>
+              <option value="africa">Oceania</option>
+            </select>
+          </div>
+        </form>
+        <div class="section-hero__cards">
+          <div class="section-hero__cards-card">
+            <img src="src/img/pakistan.png" alt="flag" />
+            <h3>Pakistan</h3>
+            <p><span>Population:</span> 1999999999999</p>
+            <p><span>Region:</span> Asia</p>
+            <p><span>Capital:</span> Islambad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

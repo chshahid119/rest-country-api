@@ -1,0 +1,38 @@
+.section-hero {
+  width: 90%;
+  margin: auto;
+  &__input {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 5rem;
+
+    input {
+      width: 30%;
+      padding: 1rem;
+    }
+    select {
+      width: 20%;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem 3rem;
+    &-card {
+      padding: 2rem;
+      width: 20rem;
+      border-radius: 1rem;
+      background-color: #fff;
+      img {
+        padding: 0;
+        width: 100%;
+        background-color: black;
+      }
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}

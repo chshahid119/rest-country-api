@@ -1,0 +1,71 @@
+:root {
+  --background-color: #e9eef3;
+  --shadow-color: #212529;
+  --main-color: #495057; }
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  color: var(--main-color); }
+
+body {
+  box-sizing: border-box;
+  background-color: var(--background-color); }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; }
+
+.n {
+  width: 3rem; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.183);
+  font-size: 1.5rem; }
+  .header-modes {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 600; }
+
+.section-hero {
+  width: 90%;
+  margin: auto; }
+  .section-hero__input {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 5rem; }
+    .section-hero__input input {
+      width: 30%;
+      padding: 1rem; }
+    .section-hero__input select {
+      width: 20%; }
+  .section-hero__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem 3rem; }
+    .section-hero__cards-card {
+      padding: 2rem;
+      width: 20rem;
+      border-radius: 1rem;
+      background-color: #fff; }
+      .section-hero__cards-card img {
+        padding: 0;
+        width: 100%;
+        background-color: black; }
+      .section-hero__cards-card span {
+        font-weight: 600; }
