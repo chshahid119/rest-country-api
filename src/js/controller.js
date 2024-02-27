@@ -12,7 +12,6 @@ const controlCountries = async function () {
     console.log(err);
   }
 };
-controlCountries();
 
 const controlPagination = function (page) {
   model.state.page = page;
@@ -21,12 +20,23 @@ const controlPagination = function (page) {
   model.divideIntoPages();
   cardsView.render(model.state.countriesPerPage);
 };
+controlCountries();
+
+const controlRegion = async function (data) {
+  const region = data;
+  model.state.region = region.toLowerCase();
+
+  await model.loadRegionWiseCountries();
+  cardsView.render(model.state.countriesPerPage);
+  console.log(model.state.countriesPerPage);
+};
 
 const init = function () {
   cardsView.addEnableModeHandler();
   cardsView.getNextPage(model.state, controlPagination);
   cardsView.getPreviousPage(model.state, controlPagination);
-  cardsView.getQuery();
-  cardsView.getRegion();
+  cardsView.getRegion(controlRegion);
+
+  // cardsView.getQuery();
 };
 init();

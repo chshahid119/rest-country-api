@@ -7,12 +7,6 @@ class cardsView {
   _searchQuery = document.querySelector(".section-hero__input-search");
   _region = document.querySelector(".region-select");
 
-  getRegion() {
-    this._region.addEventListener("onchnage", function (e) {
-      e.preventDefault();
-      console.log(e.target.value);
-    });
-  }
   render(data) {
     this._data = data;
     // console.log(this._data);
@@ -46,8 +40,11 @@ class cardsView {
   getNextPage(data, handlerFunc) {
     this._nextBtn.addEventListener("click", function (e) {
       e.preventDefault();
+      const totalLength = data.countriesPerPage.length;
+      console.log(totalLength);
       if (data.page == 25) return;
       let gotoPage = (data.page += 1);
+
       handlerFunc(gotoPage);
     });
   }
@@ -57,6 +54,12 @@ class cardsView {
       if (data.page == 1) return;
       let gotoPage = (data.page -= 1);
       handlerFunc(gotoPage);
+    });
+  }
+  getRegion(handlerFunc) {
+    this._region.addEventListener("change", function (e) {
+      e.preventDefault();
+      handlerFunc(e.target.value);
     });
   }
 
