@@ -1,8 +1,18 @@
-import { API_URL } from "./config";
 import { getJSON } from "./helpers";
 
 export const state = {
   countries: [],
+  countriesPerPage: [],
+  resPerPage: 4,
+  page: 1,
+};
+
+export const divideIntoPages = function (data) {
+  page = state.page;
+  const start = (page - 1) * state.resPerPage;
+  const end = page * state.resPerPage;
+
+  state.countriesPerPage = state.countries.slice(start, end);
 };
 
 export const loadCountries = async function () {
@@ -10,6 +20,7 @@ export const loadCountries = async function () {
     const data = await getJSON();
     // state.countries.push(data);
     state.countries = [...data];
+    divideIntoPages(data);
   } catch (err) {
     console.log(err);
   }

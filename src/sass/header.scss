@@ -9,10 +9,18 @@
   padding: 1rem 1.5rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.183);
   font-size: 1.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
   &-modes {
     display: flex;
     gap: 1rem;
     font-size: 1rem;
-    font-weight: 600;
+    cursor: pointer;
   }
+}
+
+.darkMode {
+  background-color: black;
+  color: white;
 }

@@ -34,12 +34,17 @@ body {
   align-items: center;
   padding: 1rem 1.5rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.183);
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; }
   .header-modes {
     display: flex;
     gap: 1rem;
     font-size: 1rem;
-    font-weight: 600; }
+    cursor: pointer; }
+
+.darkMode {
+  background-color: black;
+  color: white; }
 
 .section-hero {
   width: 90%;
@@ -50,10 +55,24 @@ body {
     padding: 3rem 5rem; }
     .section-hero__input input {
       width: 30%;
-      padding: 1rem; }
+      padding: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.183); }
+      .section-hero__input input:focus {
+        outline: 0.5rem solid #bac8ff; }
     .section-hero__input select {
-      width: 20%; }
+      width: 20%;
+      border-radius: 0.5rem;
+      border: none;
+      box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.183);
+      appearance: none;
+      padding: 1rem;
+      cursor: pointer; }
+      .section-hero__input select:focus {
+        outline: 0.5rem solid #bac8ff; }
   .section-hero__cards {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
@@ -61,11 +80,32 @@ body {
     .section-hero__cards-card {
       padding: 2rem;
       width: 20rem;
+      margin: auto;
+      height: 25rem;
       border-radius: 1rem;
       background-color: #fff; }
       .section-hero__cards-card img {
-        padding: 0;
         width: 100%;
+        height: 50%;
         background-color: black; }
       .section-hero__cards-card span {
         font-weight: 600; }
+  .section-hero .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem; }
+    .section-hero .buttons p {
+      border: none;
+      padding: 1rem;
+      background-color: #3b5bdb;
+      color: white;
+      font-size: 2rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out; }
+      .section-hero .buttons p:hover {
+        background-color: #4c6ef5; }
+      .section-hero .buttons p:active {
+        transform: translateY(-0.2rem); }
+      .section-hero .buttons p::selection {
+        background-color: transparent; }
