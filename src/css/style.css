@@ -43,7 +43,12 @@ body {
     cursor: pointer; }
 
 .darkMode {
-  background-color: black;
+  background-color: var(--shadow-color); }
+
+.Color {
+  color: #171515; }
+
+.header-color {
   color: white; }
 
 .section-hero {

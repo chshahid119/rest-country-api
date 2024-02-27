@@ -21,6 +21,11 @@
 }
 
 .darkMode {
-  background-color: black;
-  color: white;
+  background-color: var(--shadow-color);
+}
+.Color {
+  color: rgb(23, 21, 21);
+}
+.header-color {
+  color: rgb(255, 255, 255);
 }

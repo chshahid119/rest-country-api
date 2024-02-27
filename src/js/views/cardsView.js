@@ -6,8 +6,13 @@ class cardsView {
   _previousBtn = document.querySelector(".previous");
   _searchQuery = document.querySelector(".section-hero__input-search");
   _region = document.querySelector(".region-select");
-  _cardbg = document.querySelector(".section-hero__cards-card");
 
+  getRegion() {
+    this._region.addEventListener("onchnage", function (e) {
+      e.preventDefault();
+      console.log(e.target.value);
+    });
+  }
   render(data) {
     this._data = data;
     // console.log(this._data);
@@ -34,6 +39,7 @@ class cardsView {
   addEnableModeHandler() {
     this._darkMode.addEventListener("click", function () {
       document.body.classList.toggle("darkMode");
+      document.querySelector(".header-color").classList.toggle("header-color");
     });
   }
 
@@ -57,13 +63,6 @@ class cardsView {
   getQuery() {
     this._searchQuery.addEventListener("onChange", function (e) {
       e.preventDefault();
-    });
-  }
-
-  getRegion() {
-    this._region.addEventListener("onchnage", function (e) {
-      e.preventDefault();
-      console.log(e.target.value);
     });
   }
 }
