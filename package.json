@@ -2,6 +2,7 @@
   "name": "countries-api",
   "version": "1.0.0",
   "description": "fetching data from api using fetch api",
+  "main": "dist/index.js",
   "scripts": {
     "watch": "node-sass src/sass/main.scss src/css/style.css -w",
     "start": "parcel index.html",
