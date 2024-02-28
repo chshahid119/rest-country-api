@@ -9,12 +9,12 @@ class cardsView {
 
   render(data) {
     this._data = data;
-    console.log(this._data.length);
+
     this.clear();
 
     if (this._data.length == 1) {
       const el = this._data;
-      console.log(el);
+
       const markup = `<div class="section-hero__cards-card">
       <img src="${el[0].flags.png}" alt="${el[0].flags.alt}" />
       <h3>${el[0].name.common}</h3>
@@ -82,10 +82,10 @@ class cardsView {
     });
   }
 
-  renderErrorMessage() {
+  renderErrorMessage(msg) {
     const markup = ` <div class="error-msg">
     <p class="error-msg-p">
-      Sorry that country doesn't exist Please Serach any other! :(
+      ${msg}
     </p>
   </div> `;
 

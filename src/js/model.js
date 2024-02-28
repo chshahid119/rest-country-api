@@ -25,7 +25,7 @@ export const loadCountries = async function () {
     state.countries = [...data];
     divideIntoPages(data);
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
@@ -36,7 +36,7 @@ export const loadRegionWiseCountries = async function () {
     state.countries = [...data];
     divideIntoPages(data);
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
@@ -46,6 +46,6 @@ export const loadNameWiseCountry = async function () {
 
     state.searchedCountry = data;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
