@@ -17,11 +17,13 @@
     gap: 1rem;
     font-size: 1rem;
     cursor: pointer;
+    transition: all 0.2s;
   }
 }
 
 .darkMode {
   background-color: var(--shadow-color);
+  transition: all 0.2s;
 }
 .Color {
   color: rgb(23, 21, 21);

@@ -9,21 +9,34 @@ class cardsView {
 
   render(data) {
     this._data = data;
-    // console.log(this._data);
+    console.log(this._data.length);
     this.clear();
 
-    this._data.map((el) => {
-      // console.log(el.name);
+    if (this._data.length == 1) {
+      const el = this._data;
+      console.log(el);
       const markup = `<div class="section-hero__cards-card">
-      <img src="${el.flags.png}" alt="flag" />
-      <h3>${el.name.common}</h3>
-      <p><span>Population:</span> ${el.population}</p>
-      <p><span>Region:</span> ${el.region}</p>
-      <p><span>Capital:</span> ${el.capital}</p>
+      <img src="${el[0].flags.png}" alt="${el[0].flags.alt}" />
+      <h3>${el[0].name.common}</h3>
+      <p><span>Population:</span> ${el[0].population}</p>
+      <p><span>Region:</span> ${el[0].region}</p>
+      <p><span>Capital:</span> ${el[0].capital}</p>
       </div>`;
 
       this._parentElement.insertAdjacentHTML("afterbegin", markup);
-    });
+    } else {
+      this._data.map((el) => {
+        const markup = `<div class="section-hero__cards-card">
+        <img src="${el.flags.png}" alt="${el.flags.alt}" />
+        <h3>${el.name.common}</h3>
+        <p><span>Population:</span> ${el.population}</p>
+        <p><span>Region:</span> ${el.region}</p>
+        <p><span>Capital:</span> ${el.capital}</p>
+        </div>`;
+
+        this._parentElement.insertAdjacentHTML("afterbegin", markup);
+      });
+    }
   }
 
   clear() {
@@ -40,9 +53,7 @@ class cardsView {
   getNextPage(data, handlerFunc) {
     this._nextBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      const totalLength = data.countriesPerPage.length;
-      console.log(totalLength);
-      if (data.page == 25) return;
+      if (data.page >= 25) return;
       let gotoPage = (data.page += 1);
 
       handlerFunc(gotoPage);
@@ -63,10 +74,22 @@ class cardsView {
     });
   }
 
-  getQuery() {
-    this._searchQuery.addEventListener("onChange", function (e) {
+  getQuery(handlerFunc) {
+    this._searchQuery.addEventListener("change", function (e) {
       e.preventDefault();
+
+      handlerFunc(e.target.value);
     });
+  }
+
+  renderErrorMessage() {
+    const markup = ` <div class="error-msg">
+    <p class="error-msg-p">
+      Sorry that country doesn't exist Please Serach any other! :(
+    </p>
+  </div> `;
+
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 }
 

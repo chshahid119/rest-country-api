@@ -40,10 +40,12 @@ body {
     display: flex;
     gap: 1rem;
     font-size: 1rem;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all 0.2s; }
 
 .darkMode {
-  background-color: var(--shadow-color); }
+  background-color: var(--shadow-color);
+  transition: all 0.2s; }
 
 .Color {
   color: #171515; }
@@ -114,3 +116,10 @@ body {
         transform: translateY(-0.2rem); }
       .section-hero .buttons p::selection {
         background-color: transparent; }
+
+.error-msg {
+  color: #364fc7;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%; }

@@ -1,4 +1,4 @@
-import { API_URL, API_URL_REGION } from "./config";
+import { API_URL, API_URL_REGION, API_URL_NAME } from "./config";
 export const getJSON = async function () {
   try {
     const res = await fetch(`${API_URL}`);
@@ -17,6 +17,18 @@ export const getJSONRegion = async function (region) {
 
     return data;
   } catch (err) {
-    console.log(err);
+    throw err;
+  }
+};
+
+export const getJSONName = async function (country) {
+  try {
+    const res = await fetch(`${API_URL_NAME}${country}`);
+
+    const data = await res.json();
+
+    return data;
+  } catch (err) {
+    throw err;
   }
 };

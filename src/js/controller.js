@@ -28,7 +28,26 @@ const controlRegion = async function (data) {
 
   await model.loadRegionWiseCountries();
   cardsView.render(model.state.countriesPerPage);
-  console.log(model.state.countriesPerPage);
+};
+
+const controlSearch = async function (query) {
+  try {
+    model.state.searchQuery = query;
+    console.log(model.state.searchQuery);
+
+    await model.loadNameWiseCountry();
+
+    cardsView.render(model.state.searchedCountry);
+    console.log(model.state.searchedCountry);
+
+    // cardsView.render();
+  } catch (err) {
+    cardsView.renderErrorMessage();
+  }
+};
+
+export const cleanSearchedArray = function () {
+  model.state.searchedCountry.pop();
 };
 
 const init = function () {
@@ -37,6 +56,6 @@ const init = function () {
   cardsView.getPreviousPage(model.state, controlPagination);
   cardsView.getRegion(controlRegion);
 
-  // cardsView.getQuery();
+  cardsView.getQuery(controlSearch);
 };
 init();

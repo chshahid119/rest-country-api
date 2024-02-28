@@ -1,4 +1,4 @@
-import { getJSON, getJSONRegion } from "./helpers";
+import { getJSON, getJSONRegion, getJSONName } from "./helpers";
 
 export const state = {
   countries: [],
@@ -6,6 +6,8 @@ export const state = {
   resPerPage: 4,
   page: 1,
   region: "",
+  searchQuery: "",
+  searchedCountry: [],
 };
 
 export const divideIntoPages = function (data) {
@@ -29,12 +31,20 @@ export const loadCountries = async function () {
 
 export const loadRegionWiseCountries = async function () {
   try {
-    console.log(state.region);
     const data = await getJSONRegion(state.region);
-    console.log(data);
 
     state.countries = [...data];
     divideIntoPages(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const loadNameWiseCountry = async function () {
+  try {
+    const data = await getJSONName(state.searchQuery);
+
+    state.searchedCountry = data;
   } catch (err) {
     console.log(err);
   }
